@@ -139,6 +139,12 @@ let playerNames = players.map(player => {
 //console.log('player names', playerNames);
 
 
+// Another example
+// Convert array of Celcius temps to Farhenheit
+const celsius = [-15, -5, 0, 10, 16, 20, 24, 32]
+const fahrenheit = celsius.map(t => t * 1.8 + 32);
+// console.log(fahrenheit);
+
 
 
 // ========================
@@ -195,4 +201,17 @@ const oddWithReduce = data2.reduce((acc, value) => {
   }
 return acc;
 }, []);
-console.log(oddWithFilter, oddWithReduce);
+// console.log(oddWithFilter, oddWithReduce);
+
+
+// =============================
+// More practical uses of reduce
+// =============================
+
+// From the players array, list the number of players for each club
+const clubCount = players.reduce((acc, player) => {
+    acc[player.club] = acc[player.club] + 1 || 1;
+    return acc;
+}, {})
+//console.log(JSON.stringify(clubCount));
+
